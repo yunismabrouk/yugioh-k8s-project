@@ -1,4 +1,3 @@
-cat << 'EOF' > .github/workflows/docker-build.yml
 name: Docker Build Check
 
 on:
@@ -13,5 +12,4 @@ jobs:
     
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag mio-sito-test:latest
-EOF
 
