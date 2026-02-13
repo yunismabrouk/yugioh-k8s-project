@@ -1,0 +1,17 @@
+cat << 'EOF' > .github/workflows/docker-build.yml
+name: Docker Build Check
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag mio-sito-test:latest
+EOF
+
